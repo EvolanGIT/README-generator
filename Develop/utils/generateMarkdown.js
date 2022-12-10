@@ -1,10 +1,32 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+function renderLicenseBadge(license) {
+  switch (license) {
+    case 'MIT License': 
+      return  '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]';
+    case 'CC Zero License':
+      return '[![License: CC0-1.0](https://licensebuttons.net/l/zero/1.0/80x15.png)]';
+    case 'Unilicense':
+      return '[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)]';
+    case 'none':
+      return ''
+  }
+}
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+  switch (license) {
+    case 'MIT License': 
+      return  '';
+    case 'CC Zero License':
+      return '';
+    case 'Unilicense':
+      return '';
+    case 'none':
+      return ''
+  }
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
@@ -12,11 +34,11 @@ function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README. THIS IS WHERE WE CREATE THE MARKDOWN TEMPLATE
 function generateMarkdown(data) {
-  return `# ${data.projectName}
+  return `# ${data.filename}
 
 ## Description
 
-- ${data.description}
+- ${data.projectDescription}
 
 ## Technical Skills
 
@@ -39,12 +61,11 @@ function generateMarkdown(data) {
 
 ## License
 
-[![License: CC0-1.0](https://licensebuttons.net/l/zero/1.0/80x15.png)](http://creativecommons.org/publicdomain/zero/1.0/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+- ${renderLicenseBadge}
 
 
 
-Copyright (c) [2022] [Yonatan Yael Bermudez Diez]
+Copyright (c) [2022] [${data.Username}]
 
 
 ## Features
@@ -54,7 +75,7 @@ Copyright (c) [2022] [Yonatan Yael Bermudez Diez]
 
 ## How to Contribute
 
-Constructive Comments are always welcome. You can e-mail me ${emailInfo}. Thank you for checking out our website.`
+Constructive Comments are always welcome. You can e-mail me ${data.emailInfo}. Thank you for checking out our website.`
 
 }
 

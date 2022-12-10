@@ -1,11 +1,17 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown.js');
 
 
 // TODO: Create an array of questions for user input
 const questions = () => {
     return inquirer.prompt([
+    {
+        type: 'input',
+        name: 'Username',
+        message: 'What is your Name?',
+    },
     {
         type: 'input',
         name: 'filename',
@@ -31,10 +37,7 @@ const questions = () => {
         type: 'checkbox',
         name: 'license',
         message: 'please choose the License badge(s) you would like to add.',
-        choices: ['MIT License', 'CC Zero License', 'Unilicense'],
-        //options {
-        //if (chosen == true) {
-        // renderLicenseSection();
+        choices: ['MIT License', 'CC Zero License', 'Unilicense', 'none'],
     },
     {
         type: 'input',
@@ -57,8 +60,11 @@ const questions = () => {
 })};
 
 // TODO: Create a function to write README file
-function writeToFile(filename, data) {
-    fs.writeFile(filename, generateMarkdown(data), (err) =>
+function writeToFile(data) {
+    //fs.writefile - if there is no file, it will generate one. if there is a file, it will overwrite what's in it.
+    // if there is no file, it needs three arguments.
+    //
+    fs.writeFile('./dist/newREADME.md', generateMarkdown(data), (err) =>
     err ? console.error(err) : console.log('Readme file created successfuly!')
     );}
 
