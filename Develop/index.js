@@ -10,7 +10,7 @@ const questions = () => {
     {
         type: 'input',
         name: 'Username',
-        message: 'What is your Name?',
+        message: 'What is your full Name?',
     },
     {
         type: 'input',
@@ -37,7 +37,7 @@ const questions = () => {
         type: 'checkbox',
         name: 'license',
         message: 'please choose the License badge(s) you would like to add.',
-        choices: ['MIT License', 'CC Zero License', 'Unilicense', 'none'],
+        choices: ['MIT License', 'CC Zero License', 'Unilicense'],
     },
     {
         type: 'input',
