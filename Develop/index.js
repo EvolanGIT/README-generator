@@ -31,7 +31,7 @@ const questions = () => {
     {
         type: 'input',
         name: 'initGuide',
-        message: 'can you describe how to install this program?',
+        message: 'Can you describe how to install this program?',
     },
     {
         type: 'checkbox',
