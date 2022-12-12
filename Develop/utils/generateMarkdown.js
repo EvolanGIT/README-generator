@@ -41,24 +41,24 @@ function renderLicenseSection(license) {
 };
 
 
-function chooseBadges(badges) {
-  switch (badges) {
-    case 'JavaScript': 
-      return  '- ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)';
-    case 'nodeJs':
-      return '- ![NodeJS](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)';
-    default:
-      return ''
-  }
-};
+// function chooseBadges(badges) {
+//   switch (badges) {
+//     case 'JavaScript': 
+//       return  '- ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)';
+//     case 'nodeJs':
+//       return '- ![NodeJS](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)';
+//     default:
+//       return ''
+//   }
+// };
 
-function renderBadges(badges) {
-  let genBadge = ``;
-  for (i=0; i < badges.length; i++) {
-    genBadge += `${chooseBadges}`
-  }
-  return genBadge;
-};
+// function renderBadges(badges) {
+//   let genBadge = ``;
+//   for (i=0; i < badges.length; i++) {
+//     genBadge += `${chooseBadges}`
+//   }
+//   return genBadge;
+// };
 
 
 // TODO: Create a function to generate markdown for README. THIS IS WHERE WE CREATE THE MARKDOWN TEMPLATE
@@ -71,7 +71,7 @@ ${data.projectDescription}
 
 ## Technical Skills
 
-${renderBadges(data.badges)}
+
 
 
 ## Table of Contents 
