@@ -32,22 +32,33 @@ function renderLicenseLink(license) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
+  let genLic = ``;
   for (i=0; i < license.length; i++) {
-    `${renderLicenseBadge(data.license[i])}${renderLicenseLink(data.license[i])}`
+    genLic+=`${renderLicenseBadge(license[i])}${renderLicenseLink(license[i])}  
+    `
   } 
-}
+  return genLic;
+};
 
 
-// function renderBadgeIcon(badges) {
-//   switch (badges) {
-//     case 'JavaScript': 
-//       return  '- ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)';
-//     case 'nodeJs':
-//       return '- ![NodeJS]https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white';
-//     default:
-//       return ''
-//   }
-// }
+function chooseBadges(badges) {
+  switch (badges) {
+    case 'JavaScript': 
+      return  '- ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)';
+    case 'nodeJs':
+      return '- ![NodeJS](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)';
+    default:
+      return ''
+  }
+};
+
+function renderBadges(badges) {
+  let genBadge = ``;
+  for (i=0; i < badges.length; i++) {
+    genBadge += `${chooseBadges}`
+  }
+  return genBadge;
+};
 
 
 // TODO: Create a function to generate markdown for README. THIS IS WHERE WE CREATE THE MARKDOWN TEMPLATE
@@ -60,7 +71,7 @@ ${data.projectDescription}
 
 ## Technical Skills
 
-
+${renderBadges(data.badges)}
 
 
 ## Table of Contents 
@@ -77,7 +88,7 @@ ${data.projectDescription}
 
 ## License
 
-${renderLicenseSection()}
+${renderLicenseSection(data.license)}
 
 
 
