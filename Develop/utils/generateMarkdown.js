@@ -40,7 +40,9 @@ function renderLicenseSection(license) {
   return genLic;
 };
 
-
+// This function was created as an extra feature to offer the user an option
+// it gives the user the option to add technical skill badges to their README file.
+// If there no badge is chosen, it will return an empty string.
 function chooseBadges(badges) {
   switch (badges) {
     case 'JavaScript': 
@@ -52,6 +54,7 @@ function chooseBadges(badges) {
   }
 };
 
+// This function renders the chosen badge or badges into the Markdown. it will render an empty string if none is chosen.
 function renderBadges(badges) {
   let genBadge = ``;
   for (i=0; i < badges.length; i++) {
@@ -67,7 +70,7 @@ function generateMarkdown(data) {
 
 ## Description
   
-  ${data.projectDescription}
+- ${data.projectDescription}
 
 ## License
 
@@ -87,17 +90,17 @@ ${renderLicenseSection(data.license)}
 
 ## Instalation
 
-${data.initGuide}
+- ${data.initGuide}
 
 
 ## Testing
 
--${data.programTest}
+- ${data.programTest}
 
 
 ## How to Contribute and Contact
 
-Constructive Comments are always welcome. You can e-mail me at ${data.emailInfo}. 
+- Constructive Comments are always welcome. You can e-mail me at ${data.emailInfo}. 
 Alternativtely you can check my gitHub profile at https://github.com/${data.githubInfo}.  
 Thank you for checking out my website.
 

@@ -61,9 +61,6 @@ const questions = () => {
 
 // TODO: Create a function to write README file
 function writeToFile(data) {
-    //fs.writefile - if there is no file, it will generate one. if there is a file, it will overwrite what's in it.
-    // if there is no file, it needs three arguments.
-    //
     fs.writeFile('./dist/newREADME.md', generateMarkdown(data), (err) =>
     err ? console.error(err) : console.log('Readme file created successfuly!')
     );}
